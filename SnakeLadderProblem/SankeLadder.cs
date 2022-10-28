@@ -11,7 +11,7 @@ namespace SnakeLadderProblem
         int position = 0, count = 0;
         Random random = new Random();
         //UC3
-        public void GamePlay()
+        public int GamePlay()
         {
             while (position < 100)
             {
@@ -64,6 +64,7 @@ namespace SnakeLadderProblem
                 }
             }
             Console.WriteLine("total number of DICE roll to win a game is "+ count);
+            return count;
         }
     }
 }
