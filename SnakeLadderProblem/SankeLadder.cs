@@ -13,7 +13,7 @@ namespace SnakeLadderProblem
         //UC3
         public void GamePlay()
         {
-            while (position < 99)
+            while (position < 100)
             {
                 int num = random.Next(1, 7);
                 int check = random.Next(0, 3);
