@@ -8,12 +8,12 @@ namespace SnakeLadderProblem
 {
     internal class SankeLadder
     {
-        int position = 0;
+        int position = 0, count = 0;
         Random random = new Random();
         //UC3
         public void GamePlay()
         {
-            while (position < 99)
+            while (position < 100)
             {
                 int num = random.Next(1, 7);
                 int check = random.Next(0, 3);
@@ -21,13 +21,14 @@ namespace SnakeLadderProblem
                 {
                     case 0:
                         Console.WriteLine("Player is in the same position");
+                        count++;
                         break;
                     case 1:
-
+                        count++;
                         if (position > 93)
                         {
                             int hundred = 100 - position;
-                            Console.WriteLine("Game is ib the LAST PHASE and position is :" + position);
+                            Console.WriteLine("Game is in the LAST PHASE and position is :" + position);
                             if (hundred >= num)
                             {
                                 position += num;
@@ -46,8 +47,10 @@ namespace SnakeLadderProblem
 
                         break;
                     case 2:
+                        count++;
                         if(position > 93)
                         {
+                            Console.WriteLine("Snake or Negative part is end");
                             break;
                         }
                         position -= num;
@@ -60,7 +63,7 @@ namespace SnakeLadderProblem
                         break;
                 }
             }
-            
+            Console.WriteLine("total number of DICE roll to win a game is "+ count);
         }
     }
 }
