@@ -13,7 +13,7 @@ namespace SnakeLadderProblem
         //UC3
         public void GamePlay()
         {
-            while (position < 101)
+            while (position < 99)
             {
                 int num = random.Next(1, 7);
                 int check = random.Next(0, 3);
@@ -23,10 +23,33 @@ namespace SnakeLadderProblem
                         Console.WriteLine("Player is in the same position");
                         break;
                     case 1:
-                        position += num;
-                        Console.WriteLine("Player position is : " + position);
+
+                        if (position > 93)
+                        {
+                            int hundred = 100 - position;
+                            Console.WriteLine("Game is ib the LAST PHASE and position is :" + position);
+                            if (hundred >= num)
+                            {
+                                position += num;
+                                Console.WriteLine("Player position is : " + position);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Wait For the Next Round Until you get the exact 100");
+                            }
+                        }
+                        else
+                        {
+                            position += num;
+                            Console.WriteLine("Player position is : " + position);
+                        }
+
                         break;
                     case 2:
+                        if(position > 93)
+                        {
+                            break;
+                        }
                         position -= num;
                         Console.WriteLine("Player position is : " + position);
                         if(position < 0) 
