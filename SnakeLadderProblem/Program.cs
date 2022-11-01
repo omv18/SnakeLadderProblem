@@ -19,11 +19,11 @@ namespace SnakeLadderProblem
             }
             if(check == 1)
             {
-                Console.WriteLine("Player 1 Wins the match");
+                Console.WriteLine("Player 2 Wins the match");
             }
             else
             {
-                Console.WriteLine("Player 2 Wins the match");
+                Console.WriteLine("Player 1 Wins the match");
             }
         }
     }
